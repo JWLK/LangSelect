@@ -8,7 +8,9 @@
 import Foundation
 
 class Identifier: ObservableObject {
-    @Published var localCode = "en"
+//    @AppStorage("localCode") var localCode : String = UserDefaults.standard.set("en", forKey: "localCode")
+    
+//    @Published var localCode = "en"
 }
 
 extension String {

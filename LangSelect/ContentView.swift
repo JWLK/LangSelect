@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var identifier = Identifier()
+//    @ObservedObject var identifier = Identifier()
+    @AppStorage("localCode") var localCode : String = "en"
+    
     let hello: LocalizedStringKey = "Hello"
+    
+    let textHello = "Hello".locailzed()
     var body: some View {
         VStack {
             Text(hello)
                 .padding()
             Button("English", action: {
-                identifier.localCode = "en"
+                localCode = "en"
             })
             Button("Korean", action: {
-                identifier.localCode = "ko"
+                localCode = "ko"
             })
-        }.environment(\.locale, .init(identifier: identifier.localCode))
+        }.environment(\.locale, .init(identifier: localCode))
     }
 }
 
